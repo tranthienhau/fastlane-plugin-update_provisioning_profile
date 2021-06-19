@@ -1,0 +1,19 @@
+lane :test do
+  update_provisioning_profile(
+    xcodeproj: "myapp.xcodeproj",
+    configuration: "Debug",
+    provisioning_profile: "Development_profile.mobileprovision",
+  )
+  update_provisioning_profile(
+    xcodeproj: "myapp.xcodeproj",
+    configuration: "Release",
+    provisioning_profile: "AppStore_profile.mobileprovision",
+  )
+
+  update_provisioning_profile(
+    xcodeproj: "myapp.xcodeproj",
+    target: "myapp_target_here"
+    configuration: "myapp_configuration_here",
+    provisioning_profile: "/path/to/provisioning_profile.mobileprovision",
+  )
+end
